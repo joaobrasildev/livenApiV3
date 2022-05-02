@@ -1,3 +1,4 @@
+import { Exclude } from 'class-transformer';
 import {
   Column,
   CreateDateColumn,
@@ -21,6 +22,7 @@ export class User {
   @Column({ nullable: false, type: 'varchar', length: 200  })
   email: string;
 
+  @Exclude()
   @Column({ nullable: false, type: 'varchar', length: 200  })
   password: string;
 
@@ -30,7 +32,7 @@ export class User {
   @Column({ nullable: false, type: 'date' })
   birthDate: Date;
 
-  @Column({ nullable: false, type: 'varchar', length: 11  })
+  @Column({ nullable: false, type: 'varchar', length: 14  })
   phone: string;
 
   @CreateDateColumn({ name: 'created_at', type: 'date' })
@@ -38,7 +40,4 @@ export class User {
 
   @UpdateDateColumn({ name: 'updated_at', type: 'date' })
   public updatedAt: Date;
-
-  @DeleteDateColumn({ name: 'deleted_at', type: 'date' })
-  public deletedAt: Date;
 }

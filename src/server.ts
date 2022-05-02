@@ -3,9 +3,10 @@ import { createConnection } from 'typeorm';
 import app from './app';
 
 async function start() {
+    const port = process.env.PORT || 3000
     await createConnection();
-    app.listen(3000);
-    console.log('Server running on port 3000!');
+    app.listen(port);
+    console.log(`Server running on port ${port}!`);
 }
 
 start();
