@@ -1,6 +1,4 @@
-import {  instanceToInstance } from "class-transformer";
 import { Response, Request } from "express";
-
 import * as service from "./service";
 
 export const update = async (
@@ -8,7 +6,11 @@ export const update = async (
   res: Response
 ): Promise<Response> => {
   const data = req.body;
-  await service.update(data);
+  try {
+    await service.update(data);
 
-  return res.status(204).json();
+    return res.status(204).json();
+  } catch(err: any) {
+    return res.status(err.code).json({ message: err.message });
+  }   
 };
