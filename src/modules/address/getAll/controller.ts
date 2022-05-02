@@ -7,7 +7,8 @@ export const getAll = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const response = await service.getAll();
+  const data = req.query
+  const response = await service.getAll(data);
 
   return res.status(StatusCode.Ok).json(instanceToInstance(response));
 };
