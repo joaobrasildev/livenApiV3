@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "ad9fe286-0c3a-4914-aa46-8a036db6580c",
+		"name": "Liven",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Name Test\",\n  \"email\": \"email@test.com\",\n  \"password\": \"Teste@123\",\n  \"cpf\": \"999999999\",\n  \"birthDate\": \"2000-01-01\",\n  \"phone\": \"99999999999999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgyOTdhZDVjLTYyNjAtNDcxZS1iMjY5LTBkMWQxNTYzOTRlNiIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJjcGYiOiI5OTk5OTk5OTkiLCJpYXQiOjE2NTE0OTk0OTgsImV4cCI6MTY1MTY3MjI5OH0.vLzKUrr-ByFwsh1Am3NrcwPbI9pKTfytmDYMdvoCGNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/8297ad5c-6260-471e-b269-0d1d156394e6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"8297ad5c-6260-471e-b269-0d1d156394e6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"f2db4674-0a45-4b1d-b031-49af37fca426\",\n  \"name\": \"Name Test Alter\",\n  \"password\": \"Teste@123\",\n  \"email\": \"email.alter@test.com\",\n  \"cpf\": \"88888888888\",\n  \"birthDate\": \"2000-12-31\",\n  \"phone\": \"988888888888888\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users/f2db4674-0a45-4b1d-b031-49af37fca426",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"f2db4674-0a45-4b1d-b031-49af37fca426"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Create Address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU0MDk2YjQ2LWMxNDktNDAxZC1hZmUzLTIwMGRhMjFiOTAzZCIsImVtYWlsIjoiZW1haWxAdGVzdC5jb20iLCJjcGYiOiI5OTk5OTk5OTkiLCJpYXQiOjE2NTE1MjAwMzcsImV4cCI6MTY1MTY5MjgzN30.VwTNNLnJ5EUI4AhYGSfyLNhrf0lqqFK4Wa2Irtbxlds",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"postalCode\":\"99999999\",\n  \"street\":\"Rua Test 2\",\n  \"number\": 10,\n  \"complement\":\"Test\",\n  \"neighborhood\":\"Test\",\n  \"state\":\"SP\",\n  \"city\":\"test\",\n  \"country\":\"BR\",\n  \"userId\":\"54096b46-c149-401d-afe3-200da21b903d\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/addresses/3682257a-8e7c-4d08-991d-4264f98ab4e4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addresses",
+								"3682257a-8e7c-4d08-991d-4264f98ab4e4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll Addresses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/addresses?userId=8297ad5c-6260-471e-b269-0d1d156394e7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addresses"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "8297ad5c-6260-471e-b269-0d1d156394e7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"fc0b523c-a202-4d38-bab8-275b2c884567\",  \n  \"postalCode\":\"88888888\",\n  \"street\":\"Rua Test alter\",\n  \"number\": 10,\n  \"complement\":\"Test alter\",\n  \"neighborhood\":\"Test alter\",\n  \"state\":\"SP\",\n  \"city\":\"test alter\",\n  \"country\":\"BR\",\n  \"userId\":\"f2db4674-0a45-4b1d-b031-49af37fca426\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOne Address",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/addresses/fc0b523c-a202-4d38-bab8-275b2c884567",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"addresses",
+								"fc0b523c-a202-4d38-bab8-275b2c884567"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"email@test.com\",\n    \"password\": \"Teste@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
