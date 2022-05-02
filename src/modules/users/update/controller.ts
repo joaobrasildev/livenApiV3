@@ -1,4 +1,5 @@
 import { Response, Request } from "express";
+import { StatusCode } from "../../../shared/utils/error.statusCode";
 import * as service from "./service";
 
 export const update = async (
@@ -9,7 +10,7 @@ export const update = async (
   try {
     await service.update(data);
 
-    return res.status(204).json();
+    return res.status(StatusCode.NoContent).json();
   } catch(err: any) {
     return res.status(err.code).json({ message: err.message });
   }   
