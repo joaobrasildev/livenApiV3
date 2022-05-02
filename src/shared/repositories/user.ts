@@ -28,10 +28,10 @@ export const getByECpf= async (email: string): Promise<User | undefined |null> =
   return repository.findOne({ where: { email } });
 }
 
-export const update = async (data: UpdateUserDto): Promise<void> => {
+export const update = async (data: UpdateUserDto): Promise<User> => {
   const repository = getRepository(User);
   const dataUpdated = await repository.create(data);
-  await repository.save(dataUpdated)
+  return repository.save(dataUpdated)
 };
 
 export const remove = async (id: string): Promise<void> => {

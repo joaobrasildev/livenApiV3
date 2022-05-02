@@ -51,10 +51,10 @@ export const getByUser = async (userId: string): Promise<Address[] | undefined> 
   return repository.find({ where: { userId } });
 }
 
-export const update = async (data: UpdateAddressDto): Promise<void> => {
+export const update = async (data: UpdateAddressDto): Promise<Address> => {
   const repository = getRepository(Address);
   const dataUpdated = await repository.create(data);
-  await repository.save(dataUpdated)
+  return repository.save(dataUpdated)
 };
 
 export const remove = async (id: string): Promise<void> => {

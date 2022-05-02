@@ -3,7 +3,7 @@ export class UpdateAddressDto {
   postalCode: string;
   street: string;
   number: number;
-  complement: string;
+  complement?: string;
   neighborhood: string;
   state: string;
   city: string;
