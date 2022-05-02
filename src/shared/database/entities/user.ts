@@ -32,7 +32,7 @@ export class User {
   @Column({ nullable: false, type: 'date' })
   birthDate: Date;
 
-  @Column({ nullable: false, type: 'varchar', length: 11  })
+  @Column({ nullable: false, type: 'varchar', length: 14  })
   phone: string;
 
   @CreateDateColumn({ name: 'created_at', type: 'date' })
