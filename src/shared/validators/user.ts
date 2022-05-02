@@ -23,7 +23,7 @@ export const createUserSchema = yup.object().shape({
       .string()
       .strict(true)
       .required(ValidatorMessages.requiredMessage("cpf"))
-      .max(200, ValidatorMessages.maxLengthMessage("cpf", "11")),            
+      .max(11, ValidatorMessages.maxLengthMessage("cpf", "11")),            
     birthDate: yup
       .string()
       .strict(true)
@@ -34,7 +34,7 @@ export const createUserSchema = yup.object().shape({
       .string()
       .strict(true)
       .required(ValidatorMessages.requiredMessage("phone"))
-      .max(100, ValidatorMessages.maxLengthMessage("phone", "14")),
+      .max(14, ValidatorMessages.maxLengthMessage("phone", "14")),
   }),
 });
 
@@ -64,7 +64,7 @@ export const updateUserSchema = yup.object().shape({
       .string()
       .strict(true)
       .required(ValidatorMessages.requiredMessage("cpf"))
-      .max(200, ValidatorMessages.maxLengthMessage("cpf", "11")),            
+      .max(11, ValidatorMessages.maxLengthMessage("cpf", "11")),            
     birthDate: yup
       .string()
       .strict(true)
@@ -75,6 +75,6 @@ export const updateUserSchema = yup.object().shape({
       .string()
       .strict(true)
       .required(ValidatorMessages.requiredMessage("phone"))
-      .max(100, ValidatorMessages.maxLengthMessage("phone", "14")),
+      .max(14, ValidatorMessages.maxLengthMessage("phone", "14")),
   }),
 });
