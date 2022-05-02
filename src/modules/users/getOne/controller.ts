@@ -1,6 +1,6 @@
 import {  instanceToInstance } from "class-transformer";
 import { Response, Request } from "express";
-
+import { StatusCode } from "../../../shared/utils/error.statusCode";
 import * as service from "./service";
 
 export const getOne = async (
@@ -10,5 +10,5 @@ export const getOne = async (
   const { id } = req.params;
   const response = await service.getOne(id);
 
-  return res.status(200).json(instanceToInstance(response));
+  return res.status(StatusCode.Ok).json(instanceToInstance(response));
 };
