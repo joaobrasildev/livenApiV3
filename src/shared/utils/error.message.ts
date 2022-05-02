@@ -3,4 +3,6 @@ export enum Error {
     UserEmailAlreadyExist = 'User email already exist',
     UserCpfAlreadyExist = 'User cpf already exist',
     AddressNotFound = 'Address not found',
+    InvalidCredentials = 'Login or password is invalid',
+    Unauthorized = 'Invalid Authenticate Credentials'
 }

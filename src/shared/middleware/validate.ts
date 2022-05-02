@@ -1,4 +1,5 @@
 import { NextFunction, Request, Response } from "express";
+import { StatusCode } from "../../shared/utils/error.statusCode";
 
 export const validate =
   (schema: any) =>
@@ -12,6 +13,6 @@ export const validate =
 
       next();
     } catch (err: any) {
-      return res.status(400).json({ type: err.name, message: err.message });
+      return res.status(StatusCode.BadRequest).json({ type: err.name, message: err.message });
     }
   };
