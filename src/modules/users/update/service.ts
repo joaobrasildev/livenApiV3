@@ -1,8 +1,6 @@
-import typeorm from 'typeorm'
-import { User } from '../../../shared/database/entities/user';
 import { UpdateUserDto } from "../../../shared/dtos/user/update.dto";
 import { HttpError } from "../../../shared/errors/http.error";
-import * as repository from "../../../shared/repositories/user.repository";
+import * as repository from "../../../shared/repositories/user";
 import { createHash } from "../../../shared/utils/bcrypt";
 import { Error } from "../../../shared/utils/error.message";
 import { StatusCode } from "../../../shared/utils/error.statusCode";

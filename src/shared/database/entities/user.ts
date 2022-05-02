@@ -2,12 +2,13 @@ import { Exclude } from 'class-transformer';
 import {
   Column,
   CreateDateColumn,
-  DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   Unique,
   UpdateDateColumn,
 } from 'typeorm';
+import { Address } from './address';
 
 @Entity('users')
 @Unique(['email'])
@@ -40,4 +41,7 @@ export class User {
 
   @UpdateDateColumn({ name: 'updated_at', type: 'date' })
   public updatedAt: Date;
+
+  @OneToMany(() => Address, (address) => address.user)
+  public addresses?: Address;  
 }

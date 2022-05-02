@@ -1,16 +1,17 @@
 import { Response, Request } from "express";
-import { StatusCode } from "../../../shared/utils/error.statusCode";
 import * as service from "./service";
+import { StatusCode } from "../../shared/utils/error.statusCode";
 
-export const update = async (
+export const login = async (
   req: Request,
   res: Response
-): Promise<Response> => {
+): Promise<Response | undefined> => {
   const data = req.body;
+  
   try {
-    await service.update(data);
+    const response = await service.login(data);
 
-    return res.status(StatusCode.NoContent).json();
+    return res.status(StatusCode.Ok).json(response);
   } catch(err: any) {
     return res.status(err.code).json({ message: err.message });
   }   

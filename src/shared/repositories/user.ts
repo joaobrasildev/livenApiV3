@@ -10,7 +10,7 @@ export const create = async (data: CreateUserDto): Promise<User> => {
 
 export const getOne = async (id: string): Promise<User | undefined> => {
   const repository = getRepository(User);
-  return repository.findOne({ where: { id } });
+  return repository.findOne({ where: { id }, relations: ['addresses'] } );
 };
 
 export const getAll = async (): Promise<User[] | undefined> => {
