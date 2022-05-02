@@ -1,6 +1,5 @@
-import {  instanceToInstance } from "class-transformer";
 import { Response, Request } from "express";
-
+import { StatusCode } from "../../../shared/utils/error.statusCode";
 import * as service from "./service";
 
 export const remove = async (
@@ -10,5 +9,5 @@ export const remove = async (
   const { id } = req.params;
   await service.remove(id);
 
-  return res.status(204).json();
+  return res.status(StatusCode.NoContent).json();
 };
